@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  kubecapture:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-01-09T18:10:11.183836229+02:00
+    description: Tcpdump capture for all nodes
+    digest: 15c77a2f1fa61f522997e4bebf19ee36313638e548f02962569fba6d61bec8c1
+    name: kubecapture
+    urls:
+    - https://digeler.github.io/k8stcpdump/kubecapture-0.1.0.tgz
+    version: 0.1.0
+generated: 2019-01-09T18:10:11.183011694+02:00
