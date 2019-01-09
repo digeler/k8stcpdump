@@ -1,0 +1,2 @@
+please check file are created in your storage account
+when you want to stop the capture ,just delete the deployment.

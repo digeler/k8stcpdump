@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: capture
+spec:
+  template:
+    metadata:
+      labels:
+        app: logging-app
+    spec:
+      nodeSelector:
+        beta.kubernetes.io/os: linux 
+      hostNetwork: true  
+      containers:
+        - name: capture
+          image: dinorg/netcapkube
+          command: ["/bin/sh"] 
+          args: ["-c","/net/start.sh"]
+          
+              
+          lifecycle:
+            preStop:
+               exec:
+                 command: ["/bin/sh", "stopcap.sh"]           
+          env:
+          - name: MY_NODE_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.nodeName
+          volumeMounts:
+          - mountPath: /mnt/azure
+            name: capture
+            readOnly: false
+      volumes:     
+      - name: capture
+        persistentVolumeClaim:
+          claimName: azurefile
+            
