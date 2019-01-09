@@ -10,6 +10,6 @@ mountOptions:
   - gid=1000
 parameters:
   skuName: Standard_LRS
-  #storageAccount: {{ .Values.sa }}
-  storageAccount: netdinor
+  storageAccount: {{ .Values.sa }}
+  #storageAccount: netdinor
   
