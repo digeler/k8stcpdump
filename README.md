@@ -9,3 +9,7 @@ you should see the captures in the share.
 ####Notice : Please change the Reclaim policy of the pv to Retain instead of Delete.
 kubectl edit pv 
 this will keep the traces after you stop the trace.
+
+if your require more cap files use this repo : https://github.com/digeler/k8tcpappend
+it will create 40 cap files for each node.
+
