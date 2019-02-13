@@ -4,6 +4,7 @@ to install :
 - update your helm repo by : helm repo add k8tcp https://digeler.github.io/k8stcpdump/
 - install the chart by : helm install k8tcp/kubecapture --set sa=[name of the stroage account]
 you should see the captures in the share.
+- Edit the pv that use azure file -and set the reclaim policy to Retain (this will keep the traces once you remove the chart).
 -to stop the capture just remove the chart helm delete [chart name]
 
 ####Notice : Please change the Reclaim policy of the pv to Retain instead of Delete.
